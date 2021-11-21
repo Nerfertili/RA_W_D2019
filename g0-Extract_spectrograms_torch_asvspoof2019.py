@@ -45,8 +45,8 @@ _mode = 'magnitude'								# [psd, complex, magnitude, angle, phase]
 _nfft = 2048									# number of fft bins
 _nperseg = int(50 * _fs * 0.001)				# window length (in ms)
 _noverlap = int(30 * _fs * 0.001)				# window shift size (in ms)
-_dir_dataset = '/home/leo/DB/ASVspoof2019/'		# directory of Dataset
-_dir_name = '/spec_{}_{}_{}_{}/'.format(_mode, _nfft, _nperseg, _noverlap)
+_dir_dataset = 'data_base/'		# directory of Dataset
+_dir_name = 'spec_{}_{}_{}_{}/'.format(_mode, _nfft, _nperseg, _noverlap)
 
 if __name__ == '__main__':
 	l_utt = []
@@ -54,6 +54,7 @@ if __name__ == '__main__':
 		for f in fs:
 			if os.path.splitext(f)[1] != '.flac': continue
 			l_utt.append('/'.join([r, f.replace('\\', '/')]))
+			print(f)
 	
 	nb_utt_per_proc = int(len(l_utt) / _nb_proc)
 	l_proc = []
@@ -68,8 +69,14 @@ if __name__ == '__main__':
 	for i in range(_nb_proc):
 		l_proc[i].start()
 		print('start %d'%i)
+	blabla=0
 	for i in range(_nb_proc):
+		print(blabla)
+		blabla+=1
+		#print(i)
+		#print(l_proc)
 		l_proc[i].join()
+		#print('fim?')
 
 
 

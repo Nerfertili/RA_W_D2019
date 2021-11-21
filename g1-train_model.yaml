@@ -1,9 +1,9 @@
 name: base_specCNN_newData_1
 #name: test_c_2
-DB: /DB/ASVspoof2019/PA/ASVspoof2019_PA_
-DB_trn: train/spec_magnitude_2048_800_480/
-DB_dev: dev/spec_magnitude_2048_800_480/
-DB_eval: eval/spec_magnitude_2048_800_480/
+DB: data_base/PA/ASVspoof2019_PA_
+DB_trn: trainspec_magnitude_2048_800_480/
+DB_dev: devspec_magnitude_2048_800_480/
+DB_eval: evalspec_magnitude_2048_800_480/
 dir_meta_trn: cm_protocols/ASVspoof2019.PA.cm.train.trn.txt
 dir_meta_dev: cm_protocols/ASVspoof2019.PA.cm.dev.trl.txt
 dir_meta_eval: cm_protocols/ASVspoof2019.PA.cm.eval.trl.txt
